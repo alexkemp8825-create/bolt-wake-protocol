@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BOLT – Wake Protocol</title><meta name="description" content="BOLT – Wake Protocol: a top-down minimalist tactical arcade game. Build the core. Earn the cells. Wake the ship.">
+<link rel="preload" href="fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="nav"><span class="mono">BOLT // WAKE PROTOCOL</span><nav><a href="#about">About</a><a href="#gallery">Screens</a><a href="#kickstarter">Kickstarter</a></nav></header>
+<section class="hero">
+ <div class="frame logo-frame"><img src="img/logo-crop.png" alt="BOLT – Wake Protocol logo"></div>
+ <h1>BUILD THE CORE.<br>EARN THE CELLS.<br><span class="lime">WAKE THE SHIP.</span></h1>
+ <pre class="mono term">&gt; CORE ........ ONLINE
+&gt; HANGAR ...... READY
+&gt; BUILD ....... v0.9.18 "HANGAR UPDATE"</pre>
+ <a class="btn" href="#kickstarter">Kickstarter coming soon</a>
+</section>
+<section id="about" class="wrap">
+ <p class="mono label">// 01 — HOW IT PLAYS</p>
+ <h2>A top-down minimalist tactical arcade.</h2>
+ <p class="lead">In the hangar you build a hex-cell ship around its core. Every cell you place matters: where a module sits decides what it does.</p>
+ <div class="cards">
+  <div class="card frame"><span class="hex"></span><h3>28 cells</h3><p>Your hull grows cell by cell around the core, up to 28 hex cells.</p></div>
+  <div class="card frame"><span class="hex"></span><h3>Three zones</h3><p>Cells sit in the front, rear or sides of the ship.</p></div>
+  <div class="card frame"><span class="hex"></span><h3>Modules by zone</h3><p class="mono small">WEAPON → FRONT<br>DRIVE → REAR<br>DEFENCE → SIDE</p></div>
+  <div class="card frame"><span class="hex"></span><h3>Mirror modules</h3><p>Fit any cell and reflect enemy fire back.</p></div>
+ </div>
+</section>
+<section id="gallery" class="wrap">
+ <p class="mono label">// 02 — SCREENSHOTS</p><h2>From the build.</h2>
+ <div class="gallery">
+  <figure class="frame wide"><img src="img/hangar.png" alt="Hangar hull assembly" loading="lazy"><figcaption class="mono">&gt; HANGAR — HULL ASSEMBLY</figcaption></figure>
+  <figure class="frame"><img src="img/menu.png" alt="Main menu" loading="lazy"><figcaption class="mono">&gt; MAIN MENU</figcaption></figure>
+  <figure class="frame"><img src="img/boot.png" alt="Core boot loading screen" loading="lazy"><figcaption class="mono">&gt; CORE BOOT</figcaption></figure>
+ </div>
+</section>
+<section id="kickstarter" class="wrap ks">
+ <div class="frame ks-box">
+  <p class="mono label">// 03 — KICKSTARTER</p>
+  <h2>Kickstarter <span class="lime">coming soon.</span></h2>
+  <p>A Kickstarter campaign is planned but not live yet. Leave your email to hear when it launches.</p>
+  <!-- TODO: Sign-up form is a non-functional placeholder. Wire up to a mailing-list provider (action URL, method, consent text) before launch. -->
+  <form class="signup" action="#" onsubmit="return todoSignup(event)">
+   <label for="email" class="mono small">&gt; ENTER EMAIL</label>
+   <div class="row"><input id="email" type="email" required placeholder="you@example.com"><button class="btn" type="submit">Notify me</button></div>
+   <p class="mono small note" id="note" aria-live="polite"></p>
+  </form>
+ </div>
+</section>
+<footer class="wrap foot mono"><span>BOLT – WAKE PROTOCOL</span><span>BUILD v0.9.18 "HANGAR UPDATE"</span><span>© Alexander Kemp</span></footer>
+<script>
+// TODO: replace with real submission once a mailing-list provider is chosen.
+function todoSignup(e){e.preventDefault();document.getElementById('note').textContent='> SIGN-UP NOT CONNECTED YET (PLACEHOLDER)';return false;}
+</script>
+</body></html>

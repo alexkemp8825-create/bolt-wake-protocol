@@ -1,0 +1,46 @@
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/montserrat-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:800;font-display:swap;src:url("fonts/montserrat-latin-800-normal.woff2") format("woff2")}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:900;font-display:swap;src:url("fonts/montserrat-latin-900-normal.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2")}
+:root{--bg:#0f0f0e;--lime:#CCFF00;--fg:#fff;--dim:#9a9a92;--line:#2a2a27}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 "Inter","Helvetica Neue",Arial,sans-serif;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0L56 16v32L28 64 0 48V16zM28 64v33' fill='none' stroke='%23CCFF00' stroke-opacity='.04'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:"Montserrat","Arial Black","Helvetica Neue",Arial,sans-serif;font-weight:900;letter-spacing:-.01em;line-height:1.05;margin:0 0 .5em}
+.mono{font-family:"JetBrains Mono","SFMono-Regular",Consolas,"Courier New",monospace}
+.lime{color:var(--lime)}.small{font-size:.85rem}
+a{color:var(--lime)}
+.nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem 5vw;background:rgba(15,15,14,.92);border-bottom:1px solid var(--line);font-size:.8rem;letter-spacing:.15em}
+.nav nav a{color:var(--fg);text-decoration:none;margin-left:1.5rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}.nav nav a:hover{color:var(--lime)}
+.frame{position:relative;padding:1.5rem}
+.frame:before,.frame:after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--lime);pointer-events:none}
+.frame:before{top:0;left:0;border-right:0;border-bottom:0}.frame:after{bottom:0;right:0;border-left:0;border-top:0}
+.hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 5vw}
+.logo-frame{background:var(--lime);padding:0;max-width:560px;width:100%}
+.logo-frame:before,.logo-frame:after{border-color:var(--fg);margin:-10px}
+.logo-frame img{display:block;width:100%}
+.hero h1{font-size:clamp(2rem,6vw,4.2rem);margin:2.5rem 0 1.5rem}
+.term{color:var(--lime);text-align:left;font-size:clamp(.75rem,2.6vw,.95rem);margin:0 0 2rem;white-space:pre;overflow-x:auto;max-width:100%}
+.btn{display:inline-block;background:var(--lime);color:#0f0f0e;border:0;padding:.85rem 1.4rem;font:800 .85rem/1 "Montserrat",Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;cursor:pointer;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn:hover{background:#fff}
+.wrap{max-width:1140px;margin:0 auto;padding:5rem 5vw}
+.label{color:var(--lime);font-size:.8rem;letter-spacing:.15em;margin:0 0 .8rem}
+h2{font-size:clamp(1.7rem,4vw,2.8rem)}
+.lead{color:#ddd;max-width:640px;font-size:1.1rem}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.5rem}
+.card{background:#151514;border:1px solid var(--line)}.card p{color:#ccc;margin:0}.card h3{font-size:1.15rem}
+.hex{display:block;width:28px;height:32px;background:var(--lime);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);margin-bottom:1rem}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.gallery figure{margin:0;padding:10px;border:1px solid var(--line)}.gallery .wide{grid-column:1/-1}
+.gallery img{display:block;width:100%;height:auto}
+figcaption{color:var(--lime);font-size:.75rem;letter-spacing:.12em;padding-top:.6rem}
+.ks-box{border:1px solid var(--line);background:#151514;padding:3rem}
+.signup{margin-top:1.5rem;max-width:560px}.signup label{color:var(--lime);display:block;margin-bottom:.5rem}
+.row{display:flex;gap:.6rem}
+input{flex:1;min-width:0;background:var(--bg);border:1px solid #444;color:#fff;padding:.8rem;font:1rem "JetBrains Mono",Consolas,monospace}
+input:focus{outline:none;border-color:var(--lime)}
+.note{color:var(--lime);min-height:1.2em}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.75rem;letter-spacing:.12em;color:var(--dim);border-top:1px solid var(--line);padding-top:2rem;padding-bottom:2rem}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nav nav{display:none}.cards,.gallery{grid-template-columns:1fr}.row{flex-direction:column}.ks-box{padding:1.8rem 1.3rem}.wrap{padding:3.5rem 6vw}}
