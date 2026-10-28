@@ -1,9 +1,21 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BOLT – Wake Protocol</title><meta name="description" content="BOLT – Wake Protocol: a top-down minimalist tactical arcade game. Build the core. Earn the cells. Wake the ship.">
+<!DOCTYPE html><html lang="en"><head>
+<title>BOLT – Wake Protocol</title>
+<meta name="description" content="BOLT – Wake Protocol: a top-down minimalist tactical arcade game. Build the core. Earn the cells. Wake the ship.">
+<meta property="og:title" content="BOLT – Wake Protocol"><meta property="og:description" content="A top-down minimalist tactical arcade. Build the core. Earn the cells. Wake the ship.">
+<meta property="og:url" content="https://alexkemp8825-create.github.io/bolt-wake-protocol/">
+<meta name="twitter:title" content="BOLT – Wake Protocol"><meta name="twitter:description" content="A top-down minimalist tactical arcade. Build the core. Earn the cells. Wake the ship.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0f0f0e">
+<meta property="og:type" content="website"><meta property="og:site_name" content="BOLT – Wake Protocol">
+<meta property="og:image" content="https://alexkemp8825-create.github.io/bolt-wake-protocol/img/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="BOLT – Wake Protocol main menu">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@BOLTWAKEPRT">
+<meta name="twitter:image" content="https://alexkemp8825-create.github.io/bolt-wake-protocol/img/og-image.png">
 <link rel="preload" href="fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css"></head><body>
-<header class="nav"><span class="mono">BOLT // WAKE PROTOCOL</span><nav><a href="#about">About</a><a href="#gallery">Screens</a><a href="#kickstarter">Kickstarter</a></nav></header>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header class="nav"><a class="mono brand" href="index.html">BOLT // WAKE PROTOCOL</a><nav><a href="index.html#about">About</a><a href="index.html#gallery">Screens</a><a href="index.html#devlog">Devlog</a><a href="index.html#kickstarter">Kickstarter</a><a href="presskit.html">Press kit</a><a class="social" href="https://x.com/BOLTWAKEPRT" target="_blank" rel="noopener" aria-label="BOLT on X">X ↗</a><a class="social yt-link" href="#" target="_blank" rel="noopener" hidden>YouTube ↗</a></nav></header>
 <section class="hero">
  <div class="frame logo-frame"><img src="img/logo-crop.png" alt="BOLT – Wake Protocol logo"></div>
  <h1>BUILD THE CORE.<br>EARN THE CELLS.<br><span class="lime">WAKE THE SHIP.</span></h1>
@@ -11,6 +23,13 @@
 &gt; HANGAR ...... READY
 &gt; BUILD ....... v0.9.18 "HANGAR UPDATE"</pre>
  <a class="btn" href="#kickstarter">Kickstarter coming soon</a>
+</section>
+<section id="trailer" class="wrap trailer-wrap">
+ <p class="mono label">// 00 — TRAILER</p>
+ <!-- TODO: put the YouTube video ID (e.g. the part after v= in the URL) in data-youtube-id. Leave empty to show the placeholder. -->
+ <div class="trailer frame" data-youtube-id="">
+  <div class="trailer-ph"><img src="img/hangar.png" alt="" loading="lazy"><div class="trailer-msg"><span class="play"></span><p class="mono">&gt; TRAILER ...... STANDBY</p><h3>Trailer coming soon</h3></div></div>
+ </div>
 </section>
 <section id="about" class="wrap">
  <p class="mono label">// 01 — HOW IT PLAYS</p>
@@ -31,22 +50,34 @@
   <figure class="frame"><img src="img/boot.png" alt="Core boot loading screen" loading="lazy"><figcaption class="mono">&gt; CORE BOOT</figcaption></figure>
  </div>
 </section>
+<section id="devlog" class="wrap">
+ <p class="mono label">// 03 — DEVLOG / PATCH NOTES</p><h2>Build log.</h2>
+ <article class="log frame">
+  <p class="mono log-head"><span class="lime">v0.9.18</span> — HANGAR UPDATE</p>
+  <h3>v0.9.18 — Hangar Update</h3>
+  <ul class="mono log-list">
+   <li>&gt; HANGAR ...... Build your ship on a hex grid: the core plus 28 cells.</li>
+   <li>&gt; ZONES ....... Cells are split into front, rear and side zones.</li>
+   <li>&gt; MODULES ..... Weapon → front, drive → rear, defence → side.</li>
+   <li>&gt; MIRROR ...... Mirror modules fit any cell and reflect enemy fire.</li>
+   <li>&gt; LOCKED ...... 3 cells start locked.</li>
+  </ul>
+ </article>
+</section>
 <section id="kickstarter" class="wrap ks">
  <div class="frame ks-box">
-  <p class="mono label">// 03 — KICKSTARTER</p>
+  <p class="mono label">// 04 — KICKSTARTER</p>
   <h2>Kickstarter <span class="lime">coming soon.</span></h2>
   <p>A Kickstarter campaign is planned but not live yet. Leave your email to hear when it launches.</p>
-  <!-- TODO: Sign-up form is a non-functional placeholder. Wire up to a mailing-list provider (action URL, method, consent text) before launch. -->
-  <form class="signup" action="#" onsubmit="return todoSignup(event)">
-   <label for="email" class="mono small">&gt; ENTER EMAIL</label>
-   <div class="row"><input id="email" type="email" required placeholder="you@example.com"><button class="btn" type="submit">Notify me</button></div>
+  <!-- TODO: Buttondown sign-up. Set BUTTONDOWN_USERNAME at the top of site.js; the form action is built from it.
+       Until it is set, submitting shows a friendly "not connected yet" message and sends nothing. -->
+  <form class="signup" id="signup" method="post" action="https://buttondown.com/api/emails/embed-subscribe/USERNAME" target="_blank">
+   <label for="bd-email" class="mono small">&gt; ENTER EMAIL</label>
+   <div class="row"><input id="bd-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email"><input type="hidden" name="embed" value="1"><button class="btn" type="submit">Notify me</button></div>
    <p class="mono small note" id="note" aria-live="polite"></p>
   </form>
  </div>
 </section>
-<footer class="wrap foot mono"><span>BOLT – WAKE PROTOCOL</span><span>BUILD v0.9.18 "HANGAR UPDATE"</span><span>© Alexander Kemp</span></footer>
-<script>
-// TODO: replace with real submission once a mailing-list provider is chosen.
-function todoSignup(e){e.preventDefault();document.getElementById('note').textContent='> SIGN-UP NOT CONNECTED YET (PLACEHOLDER)';return false;}
-</script>
+<footer class="wrap foot mono"><span>BOLT – WAKE PROTOCOL</span><span>BUILD v0.9.18 "HANGAR UPDATE"</span><span class="foot-links"><a href="presskit.html">PRESS KIT</a><a href="https://x.com/BOLTWAKEPRT" target="_blank" rel="noopener">X @BOLTWAKEPRT</a><a class="yt-link" href="#" target="_blank" rel="noopener" hidden>YOUTUBE</a></span><span>© Alexander Kemp</span></footer>
+<script src="site.js"></script>
 </body></html>
