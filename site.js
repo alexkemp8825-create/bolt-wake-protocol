@@ -128,3 +128,21 @@ var YOUTUBE_URL = 'https://www.youtube.com/@boltwakeprotocol';
     if (!running) { running = true; requestAnimationFrame(loop); }
   });
 })();
+
+/* Enemy crawlers: lazy-play videos in view, respect reduced motion */
+(function () {
+  var vids = document.querySelectorAll('.crawlers video');
+  if (!vids.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  Array.prototype.forEach.call(vids, function (v) {
+    v.removeAttribute('autoplay'); v.autoplay = false; v.pause();
+    if (reduce) { v.preload = 'none'; v.setAttribute('controls', ''); }
+  });
+  if (reduce) return;
+  if (!('IntersectionObserver' in window)) { Array.prototype.forEach.call(vids, play); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+  }, { rootMargin: '100px 0px', threshold: 0.15 });
+  Array.prototype.forEach.call(vids, function (v) { io.observe(v); });
+})();
