@@ -6,16 +6,16 @@
 <meta name="twitter:title" content="BOLT – Wake Protocol"><meta name="twitter:description" content="A top-down minimalist tactical arcade. Build the core. Earn the cells. Wake the ship.">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#0f0f0e">
+<meta name="theme-color" content="#0B0A10">
 <meta property="og:type" content="website"><meta property="og:site_name" content="BOLT – Wake Protocol">
 <meta property="og:image" content="https://alexkemp8825-create.github.io/bolt-wake-protocol/img/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="BOLT – Wake Protocol main menu">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@BOLTWAKEPRT">
 <meta name="twitter:image" content="https://alexkemp8825-create.github.io/bolt-wake-protocol/img/og-image.png">
-<link rel="preload" href="fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/brand/fonts/BoltRound.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/chakra-petch-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/ibm-plex-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head><body>
-<header class="nav"><a class="mono brand" href="index.html">BOLT // WAKE PROTOCOL</a><nav><a href="index.html#about">About</a><a href="index.html#gallery">Screens</a><a href="index.html#devlog">Devlog</a><a href="https://www.kickstarter.com/projects/boltwakeprotocol/bolt-wake-protocol" target="_blank" rel="noopener" class="lime">Kickstarter LIVE ↗</a><a href="presskit.html">Press kit</a><a class="social" href="https://x.com/BOLTWAKEPRT" target="_blank" rel="noopener" aria-label="BOLT on X">X ↗</a><a class="social yt-link" href="#" target="_blank" rel="noopener" hidden>YouTube ↗</a></nav></header>
+<header class="nav"><a class="brand" href="index.html" aria-label="BOLT – Wake Protocol home"><img class="brand-logo" src="assets/brand/logo/bolt-logo-nav.png" alt="" width="437" height="114"></a><nav><a href="index.html#about">About</a><a href="index.html#gallery">Screens</a><a href="index.html#devlog">Devlog</a><a href="https://www.kickstarter.com/projects/boltwakeprotocol/bolt-wake-protocol" target="_blank" rel="noopener" class="lime">Kickstarter LIVE ↗</a><a href="presskit.html">Press kit</a><a class="social" href="https://x.com/BOLTWAKEPRT" target="_blank" rel="noopener" aria-label="BOLT on X">X ↗</a><a class="social yt-link" href="#" target="_blank" rel="noopener" hidden>YouTube ↗</a></nav></header>
 <section class="hero vhero" id="top" aria-label="BOLT – Wake Protocol intro">
  <div class="vh-media">
   <video class="vh-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-hidden="true">
@@ -27,12 +27,12 @@
  <canvas class="vh-fx" aria-hidden="true"></canvas><div class="vh-reticle" aria-hidden="true"></div>
  <span class="vh-corner tl"></span><span class="vh-corner tr"></span><span class="vh-corner bl"></span><span class="vh-corner br"></span>
  <div class="vh-content">
-  <div class="frame logo-frame vh-logo" data-depth="18"><img src="img/logo-crop.png" alt="BOLT – Wake Protocol logo"></div>
+  <div class="lockup vh-logo" data-depth="18" role="img" aria-label="BOLT – Wake Protocol logo"><img class="lk-img" src="assets/brand/logo/bolt-logo.png" alt="" width="1379" height="363"></div>
   <pre class="mono term vh-term" aria-label="Core boot sequence: core boot OK, hangar ready, wake protocol engaged">&gt; CORE BOOT ...... OK
 &gt; HANGAR ......... READY
 &gt; WAKE PROTOCOL .. ENGAGED</pre>
   <h1 class="vh-tag">Build the core. Earn the cells. <span class="lime">Wake the ship.</span></h1>
-  <div class="vh-ctas"><button class="btn vh-watch" type="button">&#9654; Watch trailer</button><a class="btn" href="https://www.kickstarter.com/projects/boltwakeprotocol/bolt-wake-protocol" target="_blank" rel="noopener">Back us on Kickstarter ↗</a></div>
+  <div class="vh-ctas"><button class="btn vh-watch" type="button">&#9654; Watch trailer</button><a class="btn btn-alt vh-ks" href="https://www.kickstarter.com/projects/boltwakeprotocol/bolt-wake-protocol" target="_blank" rel="noopener">Back us on Kickstarter ↗</a></div>
  </div>
  <a class="vh-scroll mono" href="#trailer" aria-label="Scroll to content"><span>SCROLL</span><i></i></a>
 </section>
@@ -82,42 +82,44 @@
    </video>
    <figcaption class="mono"><i class="cdot"></i>&gt; CRAWLERS — FULL LINEUP<span class="cdesc">All five enemy crawlers in motion.</span></figcaption>
   </figure>
-  <figure class="frame crawler">
+  <figure class="frame crawler a-sky">
    <video class="cvid" autoplay muted loop playsinline preload="metadata" poster="crawler-thumper.jpg" aria-label="Leaps onto your position and slams down a hex shockwave.">
     <source src="crawler-thumper.mp4" type="video/mp4">
     <img src="crawler-thumper.gif" alt="Leaps onto your position and slams down a hex shockwave." loading="lazy">
    </video>
-   <figcaption class="mono"><i class="cdot" style="--c:#00E5FF"></i>&gt; THUMPER — LEAPER / HEX SHOCKWAVE<span class="cdesc">Leaps onto your position and slams down a hex shockwave.</span></figcaption>
+   <figcaption class="mono"><img class="cicon" src="assets/brand/enemies/enemy_thumper.png" alt="" width="34" height="34">&gt; THUMPER — LEAPER / HEX SHOCKWAVE<span class="cdesc">Leaps onto your position and slams down a hex shockwave.</span></figcaption>
   </figure>
-  <figure class="frame crawler">
+  <figure class="frame crawler a-yellow">
    <video class="cvid" autoplay muted loop playsinline preload="metadata" poster="crawler-rampart.jpg" aria-label="Six-legged crab spraying hex slugs. Flank it to hit its vent.">
     <source src="crawler-rampart.mp4" type="video/mp4">
     <img src="crawler-rampart.gif" alt="Six-legged crab spraying hex slugs. Flank it to hit its vent." loading="lazy">
    </video>
-   <figcaption class="mono"><i class="cdot" style="--c:#FFD400"></i>&gt; RAMPART — GATLING CRAB / HEX SLUGS<span class="cdesc">Six-legged crab spraying hex slugs. Flank it to hit its vent.</span></figcaption>
+   <figcaption class="mono"><img class="cicon" src="assets/brand/enemies/enemy_rampart.png" alt="" width="34" height="34">&gt; RAMPART — GATLING CRAB / HEX SLUGS<span class="cdesc">Six-legged crab spraying hex slugs. Flank it to hit its vent.</span></figcaption>
   </figure>
-  <figure class="frame crawler">
+  <figure class="frame crawler a-lime">
    <video class="cvid" autoplay muted loop playsinline preload="metadata" poster="crawler-lobber.jpg" aria-label="Shells you from range while its spotter drone calls the aim.">
     <source src="crawler-lobber.mp4" type="video/mp4">
     <img src="crawler-lobber.gif" alt="Shells you from range while its spotter drone calls the aim." loading="lazy">
    </video>
-   <figcaption class="mono"><i class="cdot" style="--c:#B266FF"></i>&gt; LOBBER — MORTAR STILT WALKER / SPOTTER DRONE<span class="cdesc">Shells you from range while its spotter drone calls the aim.</span></figcaption>
+   <figcaption class="mono"><img class="cicon" src="assets/brand/enemies/enemy_lobber.png" alt="" width="34" height="34">&gt; LOBBER — MORTAR STILT WALKER / SPOTTER DRONE<span class="cdesc">Shells you from range while its spotter drone calls the aim.</span></figcaption>
   </figure>
-  <figure class="frame crawler">
+  <figure class="frame crawler a-coral">
    <video class="cvid" autoplay muted loop playsinline preload="metadata" poster="crawler-cinder.jpg" aria-label="A burning hex that rolls in and torches anything close.">
     <source src="crawler-cinder.mp4" type="video/mp4">
     <img src="crawler-cinder.gif" alt="A burning hex that rolls in and torches anything close." loading="lazy">
    </video>
-   <figcaption class="mono"><i class="cdot" style="--c:#FF7A1A"></i>&gt; CINDER — ROLLING FLAME HEX<span class="cdesc">A burning hex that rolls in and torches anything close.</span></figcaption>
+   <figcaption class="mono"><img class="cicon" src="assets/brand/enemies/enemy_cinder.png" alt="" width="34" height="34">&gt; CINDER — ROLLING FLAME HEX<span class="cdesc">A burning hex that rolls in and torches anything close.</span></figcaption>
   </figure>
-  <figure class="frame crawler">
+  <figure class="frame crawler a-pink">
    <video class="cvid" autoplay muted loop playsinline preload="metadata" poster="crawler-relay.jpg" aria-label="A wheel that transmits your position and calls in a strike.">
     <source src="crawler-relay.mp4" type="video/mp4">
     <img src="crawler-relay.gif" alt="A wheel that transmits your position and calls in a strike." loading="lazy">
    </video>
-   <figcaption class="mono"><i class="cdot" style="--c:#FF4FB8"></i>&gt; RELAY — TRANSMITTER WHEEL / STRIKE CALL<span class="cdesc">A wheel that transmits your position and calls in a strike.</span></figcaption>
+   <figcaption class="mono"><img class="cicon" src="assets/brand/enemies/enemy_relay_crawler.png" alt="" width="34" height="34">&gt; RELAY — TRANSMITTER WHEEL / STRIKE CALL<span class="cdesc">A wheel that transmits your position and calls in a strike.</span></figcaption>
   </figure>
  </div>
+ <p class="mono label roster-label">&gt; ENEMY ROSTER</p>
+ <ul class="roster" aria-label="Enemy roster"><li class="a-sky"><img src="assets/brand/enemies/enemy_thumper.png" alt="" loading="lazy"><span>Thumper</span></li><li class="a-yellow"><img src="assets/brand/enemies/enemy_rampart.png" alt="" loading="lazy"><span>Rampart</span></li><li class="a-lime"><img src="assets/brand/enemies/enemy_lobber.png" alt="" loading="lazy"><span>Lobber</span></li><li class="a-coral"><img src="assets/brand/enemies/enemy_cinder.png" alt="" loading="lazy"><span>Cinder</span></li><li class="a-pink"><img src="assets/brand/enemies/enemy_relay_crawler.png" alt="" loading="lazy"><span>Relay Crawler</span></li><li class="a-coral big"><img src="assets/brand/enemies/enemy_crawlmother.png" alt="" loading="lazy"><span>Crawlmother</span></li><li class="a-cyan big"><img src="assets/brand/enemies/enemy_lycosa.png" alt="" loading="lazy"><span>Lycosa</span></li><li class="a-purple"><img src="assets/brand/enemies/enemy_commander.png" alt="" loading="lazy"><span>Commander</span></li><li class="a-purple"><img src="assets/brand/enemies/enemy_interceptor.png" alt="" loading="lazy"><span>Interceptor</span></li><li class="a-cyan"><img src="assets/brand/enemies/enemy_linker.png" alt="" loading="lazy"><span>Linker</span></li><li class="a-orange"><img src="assets/brand/enemies/enemy_marker.png" alt="" loading="lazy"><span>Marker</span></li><li class="a-pink"><img src="assets/brand/enemies/enemy_pincer.png" alt="" loading="lazy"><span>Pincer</span></li><li class="a-sky"><img src="assets/brand/enemies/enemy_relay.png" alt="" loading="lazy"><span>Relay</span></li><li class="a-purple"><img src="assets/brand/enemies/enemy_sniper.png" alt="" loading="lazy"><span>Sniper</span></li><li class="a-orange"><img src="assets/brand/enemies/enemy_trapper.png" alt="" loading="lazy"><span>Trapper</span></li></ul>
 </section>
 <section id="devlog" class="wrap">
  <p class="mono label">// 03 — DEVLOG / PATCH NOTES</p><h2>Build log.</h2>

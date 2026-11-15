@@ -106,25 +106,28 @@ var YOUTUBE_URL = 'https://www.youtube.com/@boltwakeprotocol';
   function size() { cv.width = hero.clientWidth * dpr; cv.height = hero.clientHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   size(); window.addEventListener('resize', size);
   function hex(x, y, r, a) { ctx.beginPath(); for (var k = 0; k < 6; k++) { var t = a + k * Math.PI / 3; ctx[k ? 'lineTo' : 'moveTo'](x + r * Math.cos(t), y + r * Math.sin(t)); } ctx.closePath(); }
+  var PALETTE = ['#3FE0F0', '#FF5FB8', '#C6FF3A', '#B06CFF', '#FFD84A', '#FF5A5A', '#5AB8FF', '#FF8A4A'], burst = 0;
+  function pick() { return PALETTE[(Math.random() * PALETTE.length) | 0]; }
   function loop() {
     ctx.clearRect(0, 0, cv.width, cv.height);
     parts = parts.filter(function (p) { return p.life > 0; });
     parts.forEach(function (p) {
       p.life -= 1 / 60; var k = Math.max(p.life / p.max, 0);
-      ctx.globalAlpha = k;
-      if (p.ring) { p.r += 3.2; hex(p.x, p.y, p.r, p.a); ctx.strokeStyle = '#CCFF00'; ctx.lineWidth = 2; ctx.stroke(); }
+      ctx.globalAlpha = k; ctx.shadowColor = p.c; ctx.shadowBlur = 12; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      if (p.ring) { p.r += 3.2; hex(p.x, p.y, p.r, p.a); ctx.strokeStyle = p.c; ctx.lineWidth = 3; ctx.stroke(); }
       else { p.x += p.vx; p.y += p.vy; p.vx *= .95; p.vy *= .95; p.a += p.va; hex(p.x, p.y, p.r * (0.4 + k * .6), p.a);
-        if (p.fill) { ctx.fillStyle = '#CCFF00'; ctx.fill(); } else { ctx.strokeStyle = '#CCFF00'; ctx.lineWidth = 1.2; ctx.stroke(); } }
+        if (p.fill) { ctx.fillStyle = p.c; ctx.fill(); } else { ctx.strokeStyle = p.c; ctx.lineWidth = 2.2; ctx.stroke(); } }
     });
-    ctx.globalAlpha = 1;
+    ctx.globalAlpha = 1; ctx.shadowBlur = 0;
     if (parts.length) requestAnimationFrame(loop); else running = false;
   }
   hero.addEventListener('click', function (e) {
     if (e.target.closest('a,button')) return;
     var r = hero.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-    parts.push({ ring: 1, x: x, y: y, r: 6, a: Math.PI / 6, life: .55, max: .55 });
+    var rc = PALETTE[burst++ % PALETTE.length];
+    parts.push({ ring: 1, x: x, y: y, r: 6, a: Math.PI / 6, life: .55, max: .55, c: rc });
     for (var n = 0; n < 22; n++) { var ang = Math.random() * Math.PI * 2, sp = 2 + Math.random() * 5;
-      parts.push({ x: x, y: y, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp, r: 3 + Math.random() * 6, a: Math.random() * 6, va: (Math.random() - .5) * .2, fill: Math.random() < .5, life: .6 + Math.random() * .6, max: 1.2 }); }
+      parts.push({ x: x, y: y, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp, r: 3 + Math.random() * 6, a: Math.random() * 6, va: (Math.random() - .5) * .2, fill: Math.random() < .5, life: .6 + Math.random() * .6, max: 1.2, c: pick() }); }
     if (!running) { running = true; requestAnimationFrame(loop); }
   });
 })();
